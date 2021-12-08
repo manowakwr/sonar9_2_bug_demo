@@ -23,7 +23,7 @@ class SomeClass {
         return ::callTryConvertParametrized.curried()(tryConvertA.map { classA -> ClassB(classA.value) })
     }
 
-    private suspend fun callTryConvertParametrized(tryConvertB: TryConvertB /* = suspend (kotlin.String) -> kotlin.String */, s: String): Either<ConvertError, ClassB> {
+    private suspend fun callTryConvertParametrized(tryConvertB: TryConvertB, s: String): Either<ConvertError, ClassB> {
         return tryConvertB(s)
     }
 
